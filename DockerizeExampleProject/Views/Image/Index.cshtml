@@ -1,0 +1,13 @@
+﻿@model List<string>
+
+<a asp-action="Add" asp-controller="Image">Add Image</a>
+<p>@ViewData["DBName"]</p>
+
+
+@foreach (var image in Model)
+{
+    <li>
+        <img src="~/images/@image" width="250px" height="250px" alt=""> <a asp-action="Remove" asp-controller="Image" asp-route-name="@image" >Sil</a>
+    </li>
+}
+</ul>
